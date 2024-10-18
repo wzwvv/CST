@@ -1,2 +1,2 @@
 # CST
-The original Python code of the program cross-species transfer (CST).
+This repository contains the original Python code for **Cross-Species and Cross-Modality Epileptic Seizure Detection via Multi-Space Alignment**.
