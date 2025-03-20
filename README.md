@@ -1,6 +1,6 @@
 # Canine EEG Helps Human: Cross-Species and Cross-Modality Epileptic Seizure Detection via Multi-Space Alignment
 
-**📰 News:** Our paper has been accepted for publication in **National Science Review (IF = 16.3)**.
+**📰 News:** Our paper has been accepted for publication in **National Science Review (IF=16.3)**.
 
 This repository contains the original Python code for our paper [**Canine EEG Helps Human: Cross-Species and Cross-Modality Epileptic Seizure Detection via Multi-Space Alignment**](https://academic.oup.com/nsr/advance-article/doi/10.1093/nsr/nwaf086/8052010) (National Science Review, 2025).
 
@@ -41,11 +41,7 @@ While similarities exist, **significant discrepancies** remain:
 <p align="center"><font color="gray">Figure 2: Gaps for successful cross-species knowledge transfer in algorithm design.
 
 ## Proposed Framework
-We introduce a **multi-space joint alignment mechanism** to facilitate epilepsy pattern transfer across species and modalities:
-
-- **Input-space alignment (ResizeNet)**: Maps EEG signals from higher-dimensional sources to a lower-dimensional space for compatibility.
-- **Feature-space alignment (MSA)**: Reduces distributional shifts between species and modalities.
-- **Output-space alignment**: Ensures seizure classification consistency across different datasets.
+We introduce a **multi-space joint alignment mechanism** to facilitate epilepsy pattern transfer across species and modalities, see Figure 3:
 
 <img width="1256" alt="image" src="https://github.com/user-attachments/assets/314659a4-4e1a-4fef-9a30-329b323161f9" />
 <p align="center"><font color="gray">Figure 3: The framework of cross-species and cross-modality transfer network utilizes intracranial/scalp EEG data from canines and humans (left). ResizeNet, which projects EEG signals of the species with higher dimensionality to a lower dimensionality to match their feature spaces (right).
@@ -53,8 +49,8 @@ We introduce a **multi-space joint alignment mechanism** to facilitate epilepsy 
 ## Key Results
 We validate ResizeNet+MSA on four clinical EEG datasets (**Kaggle, Freiburg, CHSZ, NICU**), demonstrating significant improvements in cross-species seizure detection:
 
-- **Limited labeled data scenario**: When the target domain has **<5% labeled data**, ResizeNet+MSA achieves an **AUC of 92.8%**, surpassing the within-species baseline by **18.7%**.
 - **Unsupervised transfer scenario**: With **no labeled data in the target domain**, ResizeNet+MSA achieves **85.4% accuracy**, outperforming non-alignment methods by **17%**.
+- **Limited labeled data scenario**: When the target domain has **<5% labeled data**, ResizeNet+MSA achieves an **AUC of 92.8%**, surpassing the within-species baseline by **18.7%**.
 - **Feature preservation**: ResizeNet retains essential EEG signal characteristics, see Figure 4.
 - **Effective feature alignment**: Post-alignment, category-related features cluster more distinctly across species, improving classification robustness, see Figure 5.
 
