@@ -4,9 +4,12 @@ coding:utf-8
 @Time:      2024/10/6 15:56
 @File:      ResizeNet.py
 @Author:    Ziwei Wang
-@Function:
+@Function: Original code of the proposed ResizeNet.
 =================================================
 '''
+import torch.nn as nn
+
+
 class TransformerResizeNet(nn.Module):
     """
     Forward:
