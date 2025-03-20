@@ -55,8 +55,8 @@ We validate ResizeNet+MSA on four clinical EEG datasets (**Kaggle, Freiburg, CHS
 
 - **Limited labeled data scenario**: When the target domain has **<5% labeled data**, ResizeNet+MSA achieves an **AUC of 92.8%**, surpassing the within-species baseline by **18.7%**.
 - **Unsupervised transfer scenario**: With **no labeled data in the target domain**, ResizeNet+MSA achieves **85.4% accuracy**, outperforming non-alignment methods by **17%**.
-- **Feature preservation**: ResizeNet retains essential EEG signal characteristics.
-- **Effective feature alignment**: Post-alignment, seizure-related features cluster more distinctly across species, improving classification robustness.
+- **Feature preservation**: ResizeNet retains essential EEG signal characteristics, see Figure 4.
+- **Effective feature alignment**: Post-alignment, category-related features cluster more distinctly across species, improving classification robustness, see Figure 5.
 
 <img width="826" alt="image" src="https://github.com/user-attachments/assets/f76fbfb8-ba74-4a8a-bc76-d0c186f20962" />
 <p align="center"><font color="gray">Figure 4: Significant characteristic preservation after ResizeNet transformation.
