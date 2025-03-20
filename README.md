@@ -28,7 +28,7 @@ Despite biological differences, **EEG seizure patterns exhibit cross-species sim
 - **Spectral domain**: Power spectral density analysis reveals similar increases in seizure-related frequency components across species.
 
 **Figure 1: Cross-species feature similarities in the temporal, spectral, and entropy domains.**  
-![Figure 1](<img width="416" alt="image" src="https://github.com/user-attachments/assets/f6fe4efe-9061-48e5-84aa-81ac874831f9" />)
+(<img width="416" alt="image" src="https://github.com/user-attachments/assets/f6fe4efe-9061-48e5-84aa-81ac874831f9" />)
 
 ---
 
@@ -41,7 +41,7 @@ While similarities exist, **significant discrepancies** remain:
 - **Feature distribution gaps**: Distinct seizure characteristics across species lead to feature misalignment.
 
 **Figure 2: Cross-species and cross-modality discrepancies in electrode placement and signal characteristics.**  
-![Figure 2](<img width="416" alt="image" src="https://github.com/user-attachments/assets/c06261a0-9ebb-426a-9e59-6c6136481002" />)
+(<img width="416" alt="image" src="https://github.com/user-attachments/assets/c06261a0-9ebb-426a-9e59-6c6136481002" />)
 
 ---
 
@@ -53,7 +53,7 @@ We introduce a **multi-space joint alignment mechanism** to facilitate epilepsy 
 - **Output-space alignment**: Ensures seizure classification consistency across different datasets.
 
 **Figure 3: Overview of ResizeNet+MSA framework for cross-species EEG seizure detection.**  
-![Figure 3](<img width="416" alt="image" src="https://github.com/user-attachments/assets/bce199d7-3354-4a76-95cb-2f7dc171637b" />)
+(<img width="416" alt="image" src="https://github.com/user-attachments/assets/bce199d7-3354-4a76-95cb-2f7dc171637b" />)
 
 ---
 
@@ -66,10 +66,10 @@ We validate ResizeNet+MSA on four clinical EEG datasets (**Kaggle, Freiburg, CHS
 - **Effective feature alignment**: Post-alignment, seizure-related features cluster more distinctly across species, improving classification robustness.
 
 **Figure 4: EEG feature preservation after ResizeNet transformation.**  
-![Figure 4](<img width="416" alt="image" src="https://github.com/user-attachments/assets/ea3ad14c-c512-426c-a15b-8799675a93f9" />)
+(<img width="416" alt="image" src="https://github.com/user-attachments/assets/ea3ad14c-c512-426c-a15b-8799675a93f9" />)
 
 **Figure 5: Improved feature alignment across species using ResizeNet+MSA.**  
-![Figure 5](<img width="416" alt="image" src="https://github.com/user-attachments/assets/e007d177-6326-43c0-9348-33c14a976829" />)
+(<img width="416" alt="image" src="https://github.com/user-attachments/assets/e007d177-6326-43c0-9348-33c14a976829" />)
 
 ---
 
