@@ -1,35 +1,92 @@
-# Canine EEG Helps Human: Cross-Species and Cross-Modality Epileptic Seizure Detection via Multi-Space Alignment
-**News:** Our paper has been accepted for publication in **National Science Review (IF = 16.3)**.
+# Canine EEG Helps Humans: Cross-Species and Cross-Modality Epileptic Seizure Detection via Multi-Space Alignment
 
-This repository contains the original Python code for our paper [**Canine EEG Helps Human: Cross-Species and Cross-Modality Epileptic Seizure Detection via Multi-Space Alignment**](https://academic.oup.com/nsr/advance-article/doi/10.1093/nsr/nwaf086/8052010) (National Science Review, 2025).
+**📰 News:** Our paper has been accepted for publication in **National Science Review (IF = 16.3)**.
 
-In this paper, we considered a very challenging scenario: cross-species (canine/human) and cross-modality (scalp/intracranial) transfer for electroencephalogram (EEG) based epileptic seizure detection. And in overall sight, they are all cross-dataset (cross-headset) transfer. By employing multi-space alignments, the proposed ResizeNet+MSA aligns cross-species and cross-modality EEG signals to enhance the detection capability beyond traditional within-species and within-modality models. This is a pilot study that provides insights into the challenges and promise of multi-species and multi-modality data integration, offering an effective solution to collecting huge EEG data to train large brain models.
+This repository contains the original Python code for our paper [**Canine EEG Helps Humans: Cross-Species and Cross-Modality Epileptic Seizure Detection via Multi-Space Alignment**](https://academic.oup.com/nsr/advance-article/doi/10.1093/nsr/nwaf086/8052010) (National Science Review, 2025).
+
+## Overview
+This work addresses the challenge of **cross-species (canine/human) and cross-modality (scalp/intracranial) EEG-based epileptic seizure detection**. Traditional models rely on within-species and within-modality data, limiting their generalizability. We introduce **ResizeNet+MSA**, a multi-space alignment framework that facilitates knowledge transfer across species and modalities, overcoming dataset heterogeneity and enhancing seizure detection performance.
+
+This study represents a pioneering effort in **multi-species and multi-modality EEG integration**, offering a scalable solution to train large brain models with diverse EEG data.
+
+---
 
 ## Challenges
-This work considers the setting that the target species itself has little or no labeled data, and some labeled data from an auxiliary species/modality are used to train a seizure classifier. It addresses the following challenges in cross-species and cross-modality transfer: 
-- Differences in electrode configurations, sampling rates, and signal characteristics present significant obstacles to aligning the input space of distinct species and modalities.
-- In addition to the input heterogeneity, distribution discrepancies across species, datasets, and subjects also introduce large heterogeneities in the feature and output spaces. 
-- Limited labeled data for the target species, a common yet critical limitation in automatic seizure detection.
+Our study focuses on a scenario where **the target species has little or no labeled data**, leveraging auxiliary labeled data from another species or modality. The key challenges include:
+
+- **Electrode configuration and signal heterogeneity**: Differences in electrode placements, sampling rates, and signal properties hinder direct transfer across species and modalities.
+- **Distributional shifts**: EEG feature distributions vary significantly across species, datasets, and subjects, posing challenges for feature alignment.
+- **Limited labeled data**: Scarcity of labeled seizure events in the target species constrains model training.
+
+---
 
 ## Cross-Species Similarity
-We first analyzed the feature similarities across species and modalities from the perspective of temporal, spectral, and entropy features (Figure 1). For temporal features, EEG signals from both canines and humans exhibit large fluctuations during epileptic seizures, indicating the transferability in the time domain. For entropy features, the approximate entropy of intracranial EEG from both species increases significantly during seizures, indicating their transferability across species. For spectral features, power spectral density spectrograms derived from consecutive Fourier transforms for both species show an increase in the power across all channels during seizures, suggesting the transferability in the frequency domain.
-<img width="473" alt="image" src="https://github.com/user-attachments/assets/046c523e-781e-4bad-adf0-d8715f3caba5" />
+Despite biological differences, **EEG seizure patterns exhibit cross-species similarities** across multiple feature domains:
+
+- **Temporal domain**: Both canine and human EEG signals show pronounced fluctuations during seizures.
+- **Entropy domain**: The approximate entropy of intracranial EEG increases significantly during seizures for both species, highlighting potential transferability.
+- **Spectral domain**: Power spectral density analysis reveals similar increases in seizure-related frequency components across species.
+
+**Figure 1: Cross-species feature similarities in the temporal, spectral, and entropy domains.**  
+![Figure 1](<img width="416" alt="image" src="https://github.com/user-attachments/assets/f6fe4efe-9061-48e5-84aa-81ac874831f9" />)
+
+---
 
 ## Cross-Species Discrepancy
-However, discrepancies across species and modalities are also evident (Figure 2). Input space disparity across species is highlighted by the discrepancy in electrode configurations between species. In terms of data acquisition devices, canine intracranial EEG signals were captured using implanted intracranial electrodes, whereas human scalp EEG signals were collected via non-invasive scalp electrodes. Even for the same signal modality, the number and configuration of electrodes can be significantly different, e.g., 16 intracranial electrodes were used for canines’ intracranial EEG data, whereas only 6 were used for humans’ intracranial EEG data. Feature distribution gaps between canines and humans are also significant.
-<img width="481" alt="image" src="https://github.com/user-attachments/assets/41d943a2-7bb0-49e3-95a1-a4285420e662" />
+While similarities exist, **significant discrepancies** remain:
 
-## Overall Framework
-The proposed joint alignment mechanism in the input-feature-output space enables epilepsy pattern transfer across biological barriers (Figure 3). The framework of cross-species and cross-modality transfer network utilizes intracranial/scalp EEG data from canines and humans (left). ResizeNet, which projects EEG signals of the species with higher dimensionality to a lower dimensionality to match their feature spaces (right).
-<img width="477" alt="image" src="https://github.com/user-attachments/assets/8a3e110f-cd7a-4e1b-b127-c17473b17ad9" />
+- **Input space differences**: Variations in electrode placement and device types introduce modality-specific biases.
+  - Canine EEG data is acquired via **implanted intracranial electrodes**, whereas human scalp EEG is recorded **non-invasively**.
+  - Even within the same modality, electrode configurations differ significantly (e.g., **16 intracranial electrodes for canines** vs. **6 for humans**).
+- **Feature distribution gaps**: Distinct seizure characteristics across species lead to feature misalignment.
+
+**Figure 2: Cross-species and cross-modality discrepancies in electrode placement and signal characteristics.**  
+![Figure 2](<img width="416" alt="image" src="https://github.com/user-attachments/assets/c06261a0-9ebb-426a-9e59-6c6136481002" />)
+
+---
+
+## Proposed Framework
+We introduce a **multi-space joint alignment mechanism** to facilitate epilepsy pattern transfer across species and modalities:
+
+- **Input-space alignment (ResizeNet)**: Maps EEG signals from higher-dimensional sources to a lower-dimensional space for compatibility.
+- **Feature-space alignment (MSA)**: Reduces distributional shifts between species and modalities.
+- **Output-space alignment**: Ensures seizure classification consistency across different datasets.
+
+**Figure 3: Overview of ResizeNet+MSA framework for cross-species EEG seizure detection.**  
+![Figure 3](<img width="416" alt="image" src="https://github.com/user-attachments/assets/bce199d7-3354-4a76-95cb-2f7dc171637b" />)
+
+---
 
 ## Key Results
+We validate ResizeNet+MSA on four clinical EEG datasets (**Kaggle, Freiburg, CHSZ, NICU**), demonstrating significant improvements in cross-species seizure detection:
 
+- **Limited labeled data scenario**: When the target domain has **<5% labeled data**, ResizeNet+MSA achieves an **AUC of 92.8%**, surpassing the within-species baseline by **18.7%**.
+- **Unsupervised transfer scenario**: With **no labeled data in the target domain**, ResizeNet+MSA achieves **85.4% accuracy**, outperforming non-alignment methods by **17%**.
+- **Feature preservation**: ResizeNet retains essential EEG signal characteristics.
+- **Effective feature alignment**: Post-alignment, seizure-related features cluster more distinctly across species, improving classification robustness.
 
+**Figure 4: EEG feature preservation after ResizeNet transformation.**  
+![Figure 4](<img width="416" alt="image" src="https://github.com/user-attachments/assets/ea3ad14c-c512-426c-a15b-8799675a93f9" />)
 
+**Figure 5: Improved feature alignment across species using ResizeNet+MSA.**  
+![Figure 5](<img width="416" alt="image" src="https://github.com/user-attachments/assets/e007d177-6326-43c0-9348-33c14a976829" />)
 
+---
 
+## Citation
+If you find this work useful, please consider citing our paper:
 
+```bibtex
+@article{wang2025canine,
+  title={Canine EEG Helps Human: Cross-Species and Cross-Modality Epileptic Seizure Detection via Multi-Space Alignment},
+  author={Wang, Ziwei and Li, Siyang and Wu, Dongrui},
+  journal={National Science Review},
+  pages={nwaf086},
+  year={2025},
+  publisher={Oxford University Press},
+}
+```
+---
 
-
-
+## Contact
+For any questions or collaborations, please feel free to reach out via **vivi@hust.edu.cn** or open an issue in this repository.
