@@ -37,9 +37,8 @@ While similarities exist, **significant discrepancies** remain:
   - Even within the same modality, electrode configurations differ significantly (e.g., **16 intracranial electrodes for canines** vs. **6 for humans**).
 - **Feature distribution gaps**: Distinct seizure characteristics across species lead to feature misalignment.
 
-**Figure 2: Gaps for successful cross-species knowledge transfer in algorithm design.**  
-
 <img width="1211" alt="image" src="https://github.com/user-attachments/assets/1b75f4d8-c435-4120-b300-0f946ebc4d21" />
+<p align="center"><font color="gray">Figure 2: Gaps for successful cross-species knowledge transfer in algorithm design.
 
 ## Proposed Framework
 We introduce a **multi-space joint alignment mechanism** to facilitate epilepsy pattern transfer across species and modalities:
@@ -48,9 +47,8 @@ We introduce a **multi-space joint alignment mechanism** to facilitate epilepsy 
 - **Feature-space alignment (MSA)**: Reduces distributional shifts between species and modalities.
 - **Output-space alignment**: Ensures seizure classification consistency across different datasets.
 
-**Figure 3: The framework of cross-species and cross-modality transfer network utilizes intracranial/scalp EEG data from canines and humans (left). ResizeNet, which projects EEG signals of the species with higher dimensionality to a lower dimensionality to match their feature spaces (right).**  
-
 <img width="1256" alt="image" src="https://github.com/user-attachments/assets/314659a4-4e1a-4fef-9a30-329b323161f9" />
+<p align="center"><font color="gray">Figure 3: The framework of cross-species and cross-modality transfer network utilizes intracranial/scalp EEG data from canines and humans (left). ResizeNet, which projects EEG signals of the species with higher dimensionality to a lower dimensionality to match their feature spaces (right).
 
 ## Key Results
 We validate ResizeNet+MSA on four clinical EEG datasets (**Kaggle, Freiburg, CHSZ, NICU**), demonstrating significant improvements in cross-species seizure detection:
@@ -60,13 +58,12 @@ We validate ResizeNet+MSA on four clinical EEG datasets (**Kaggle, Freiburg, CHS
 - **Feature preservation**: ResizeNet retains essential EEG signal characteristics.
 - **Effective feature alignment**: Post-alignment, seizure-related features cluster more distinctly across species, improving classification robustness.
 
-**Figure 4: Significant characteristic preservation after ResizeNet transformation.**  
-
 <img width="826" alt="image" src="https://github.com/user-attachments/assets/f76fbfb8-ba74-4a8a-bc76-d0c186f20962" />
+<p align="center"><font color="gray">Figure 4: Significant characteristic preservation after ResizeNet transformation.
 
-**Figure 5: Improved feature alignment across species using ResizeNet+MSA.**  
 
-<img width="809" alt="image" src="https://github.com/user-attachments/assets/5a0cae4a-f260-46a8-9d1e-c0e677c51caa" />
+<img width="809" alt="image" src="https://github.com/user-attachments/assets/c99a64d0-3a3b-4742-81d8-1a9b20b1570e" />
+<p align="center"><font color="gray">Figure 5: Improved feature alignment across species using ResizeNet+MSA.
 
 ---
 
