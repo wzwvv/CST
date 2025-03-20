@@ -25,9 +25,9 @@ Despite biological differences, **EEG seizure patterns exhibit cross-species sim
 - **Entropy domain**: The approximate entropy of intracranial EEG increases significantly during seizures for both species, highlighting potential transferability.
 - **Spectral domain**: Power spectral density analysis reveals similar increases in seizure-related frequency components across species.
 
-**Figure 1: Evidence for cross-species and cross-modality feature transferability.**  
-
 <img width="1188" alt="image" src="https://github.com/user-attachments/assets/73a4f9e5-5178-4942-a76b-dd8c34b35b73" />
+<p align="center"><font color="gray">Figure 1: Evidence for cross-species and cross-modality feature transferability.
+
 
 ## Cross-Species Discrepancy
 While similarities exist, **significant discrepancies** remain:
