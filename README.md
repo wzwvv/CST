@@ -41,7 +41,7 @@ While similarities exist, significant discrepancies remain:
 <p align="center"><font color="gray">Figure 2: Gaps for successful cross-species knowledge transfer in algorithm design.
 
 ## Proposed Framework
-We propose the ResizeNet+MSA approach to enable epilepsy pattern transfer across species and modalities (see Figure 3). <strong><font size="4" color="blue">ResizeNet is highly adaptable for cross-headset and cross-dataset transfer in BCI tasks, such as cross-headset motor imagery (MI) classification. We are actively exploring its applications in broader domains.</font></strong>
+We propose the ResizeNet+MSA approach to enable epilepsy pattern transfer across species and modalities (see Figure 3). <span style="color: red;">ResizeNet is highly adaptable for cross-headset/cross-dataset transfer in BCIs, such as cross-headset motor imagery (MI) classification. We are actively exploring its applications in broader domains.</span>
 
 <img width="1256" alt="image" src="https://github.com/user-attachments/assets/314659a4-4e1a-4fef-9a30-329b323161f9" />
 <p align="center"><font color="gray">Figure 3: The framework of cross-species and cross-modality transfer network utilizes intracranial/scalp EEG data from canines and humans (left). ResizeNet, which projects EEG signals of the species with higher dimensionality to a lower dimensionality to match their feature spaces (right).
