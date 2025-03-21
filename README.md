@@ -58,7 +58,6 @@ We validate ResizeNet+MSA on four clinical EEG datasets (Kaggle, Freiburg, CHSZ,
 <img width="826" alt="image" src="https://github.com/user-attachments/assets/f76fbfb8-ba74-4a8a-bc76-d0c186f20962" />
 <p align="center"><font color="gray">Figure 4: Significant characteristic preservation after ResizeNet transformation.
 
-
 <img width="809" alt="image" src="https://github.com/user-attachments/assets/c99a64d0-3a3b-4742-81d8-1a9b20b1570e" />
 <p align="center"><font color="gray">Figure 5: Improved feature alignment across species using ResizeNet+MSA.
 
