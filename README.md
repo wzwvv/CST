@@ -4,6 +4,8 @@
 
 This repository contains the original Python code for our paper [**Canine EEG Helps Human: Cross-Species and Cross-Modality Epileptic Seizure Detection via Multi-Space Alignment**](https://academic.oup.com/nsr/advance-article/doi/10.1093/nsr/nwaf086/8052010) (National Science Review, 2025).
 
+**📰 News:**: The original EEG trials of our seizure dataset CHSZ are now publicly available on [Zenodo](https://zenodo.org/records/19333249).
+
 ## Overview
 This work addresses the challenge of **cross-species (canine/human) and cross-modality (scalp/intracranial) EEG-based epileptic seizure detection**. Traditional models rely on within-species and within-modality data, limiting their generalizability. We introduce **ResizeNet+Multi-Space Alignment (MSA)**, a multi-space alignment framework that facilitates knowledge transfer across species and modalities, overcoming dataset heterogeneity and enhancing seizure detection performance.
 
